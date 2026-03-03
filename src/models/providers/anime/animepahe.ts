@@ -31,7 +31,7 @@ export default class AnimePahe extends AnimeParser {
     isNSFW: false,
   };
 
-  public override cachePath: string;
+  declare public cachePath: string;
 
   constructor(basePath?: string) {
     super();
@@ -312,12 +312,8 @@ export default class AnimePahe extends AnimeParser {
           };
           videoLinks.sort((a, b) => {
             const qualityA: any =
-              //@ts-expect-error ----
-
               qualityOrder[a.quality.replace(/.*?(\d+p).*/, "$1")] || 999;
             const qualityB =
-              //@ts-expect-error ----
-
               qualityOrder[b.quality.replace(/.*?(\d+p).*/, "$1")] || 999;
             return qualityA - qualityB;
           });

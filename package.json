@@ -1,6 +1,8 @@
 {
   "name": "cinderbyte",
-  "module": "index.ts",
+  "module": "dist/index.js",
+  "version": "0.0.1",
+  "types": "dist/index.d.ts",
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest",
@@ -10,8 +12,11 @@
   "peerDependencies": {
     "typescript": "^5"
   },
+  "author": [
+    "https://github.com/skunktank69"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "rimraf dist && tsc -p tsconfig.json"
   },
   "pre-commit": [
     "build"
@@ -19,10 +24,18 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-cinderbyte/cinderbyte.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cinderbyte/cinderbyte/issues"
+  },
   "dependencies": {
     "axios": "^1.13.6",
     "cheerio": "^1.2.0",
     "cinderbyte-bypass-ddg": "^0.0.1",
     "cors": "^2.8.6"
-  }
+  },
+  "packageManager": "bun@latest"
 }
